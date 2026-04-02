@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file if you have one-->
+    <link rel="stylesheet" href="./stylesheet/sylesheetWIP0.css"> <!-- Link to external CSS file if you have one-->
 </head>
 <body>
     <h1>In Passing</h1>
     <p>By Matthew Shenoda, Page made by Isael Olmedo Mayo</p>
 
     <div class="container">
-    <button type="button" onclick="document.getElementById('button2').classList.remove('hidden')" id="button1">There is something inside</button>
-    <button type="button" class="hidden" id="button2" onclick="document.getElementById('button3').classList.remove('hidden')">each of us</button>
-    <button type="button" class="hidden" id="button3" onclick="document.getElementById('button4').classList.remove('hidden')">that scurries toward the past!</button>
-    <button type="button" class="hidden" id="button4" onclick="document.getElementById('textArea5').classList.remove('hidden')">in our bodies a rooted history</button>
+    <button type="button" onclick="openNextButton('button2').classList.remove('hidden')" id="button1">There is something inside</button>
+    <button type="button" class="hidden" id="button2" onclick="openNextButton('button3').classList.remove('hidden')">each of us</button>
+    <button type="button" class="hidden" id="button3" onclick="openNextButton('button4').classList.remove('hidden')">that scurries toward the past!</button>
+    <button type="button" class="hidden" id="button4" onclick="openNextButton('textArea5').classList.remove('hidden')">in our bodies a rooted history</button>
 
     <textarea id="textArea5" class="hidden" name="future" rows="4" cols="50">
 that floats inside that sphere
@@ -25,55 +25,10 @@ yearning in a language we've forgotten.
 
 
 
-    <script></script>
+    <script src="./javascript/scriptWIP0.js"></script>
 
     <style>
-        .hidden {
-            display: none; 
-        }
-        .container{
-            position: relative;
-            width: 100vw;
-            height: 80vh;
-            background-color: blueviolet;
-        }
-        #button2{
-            position: absolute;
-            left: 30vw;
-            top: 20vw;
-        }
-        #button3{
-            position: absolute;
-            left: 60vw;
-            top: 10vw;
-        }
-        #button4{
-            position: absolute;
-            left: 70vw;
-            top: 40vw;
-        }
-        #textArea5{
-            position: absolute;
-            left: 70vw;
-            top: 45vw;
-            width: 20vw;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .container{
-                width: 100%;
-                height: auto;
-            }
-
-            #button2,
-            #button3,
-            #button4,
-            #textArea5 {
-                position: static;
-                margin-top: 10px;
-            }
-        }
-
+       
     </style>
 </body>
 
