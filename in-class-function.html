@@ -7,8 +7,15 @@
 <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file if you have one-->
 </head>
 <body>
-<h1>This is the index page</h1>
-<style></style>
-<script></script> 
+<p id="addition"></p>
+<script>
+function add(a, b, c, d, e) {
+  return a + b + c + d + e;
+}
+
+let result = add(59, 93, 67, 89, 78);
+
+document.getElementById("addition").innerHTML = "The sum is " + result;
+</script>
 </body>
 </html>
