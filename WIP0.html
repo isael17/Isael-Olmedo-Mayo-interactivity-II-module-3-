@@ -23,53 +23,6 @@
 
     <script src="./javascript/scriptWIP0.js"></script>
 
-    <div class="container" id="container">
-        <button id="mainBtn" style="left: 10px; top: 10px;"> I Can't Be Clicked </button>
-    </div>
-
-    <script>
-        const container = document.getElementById('container');
-        const mainBtn = document.getElementById('button6');
-
-        // Function to move a button to a random position
-        function moveButton(btn) {
-            const maxX = container.clientWidth - btn.offsetWidth;
-            const maxY = container.clientHeight - btn.offsetHeight;
-            btn.style.left = Math.random() * maxX + 'px';
-            btn.style.top = Math.random() * maxY + 'px';
-        }
-
-        // Function to create a new styled button
-        function createNewButton() {
-            const newBtn = document.createElement('button'); // Create element
-            newBtn.textContent = 'Why AM I BEIng CLicked On';
-            
-            // Generate random styles
-            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            const randomFontSize = Math.floor(Math.random() * 15 + 12) + 'px'; // 12px to 27px
-            
-            // Apply styles using .style property
-            newBtn.style.backgroundColor = randomColor;
-            newBtn.style.fontSize = randomFontSize;
-            newBtn.style.color = 'white';
-            
-            // Set initial random position
-            moveButton(newBtn);
-            
-            // Make new buttons also move when clicked
-            newBtn.onclick = () => moveButton(newBtn);
-            
-            container.appendChild(newBtn); // Add to page
-        }
-
-        // Main button logic
-        mainBtn.onclick = () => {
-            moveButton(mainBtn);
-            createNewButton();
-        };
-    </script>
-
-
 
 </body>
 
