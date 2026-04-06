@@ -1,4 +1,4 @@
- .hidden {
+.hidden {
             display: none; 
         }
         .buttonContainer{
@@ -7,114 +7,28 @@
             height: 80vh;
             background-color: blueviolet;
         }
-        body{
-        color: blue;
-        background-color: aquamarine;
-        }
         #button2{
             position: absolute;
             left: 30vw;
             top: 20vw;
-            color: aquamarine;
-            font-size: larger;
-                animation-name: changeColor;
-        animation-duration: 10s;
-        animation-delay: 5s;
-        animation-iteration-count: infinite;
-        animation-direction: reverse;
-        animation-fill-mode: forwards;
-        }
-        @keyframes changeColor{
-        from {color: rgb(192, 255, 46);}
-        to {color: rgb(65, 154, 255);}
         }
         #button3{
             position: absolute;
             left: 60vw;
             top: 10vw;
-            color: rebeccapurple;
-            font-size: medium;
-                          animation-name: changeColor;
-        animation-duration: 10s;
-        animation-delay: 5s;
-        animation-iteration-count: infinite;
-        animation-direction: reverse;
-        animation-fill-mode: forwards;
-        }
-        @keyframes changeColor{
-        from {color: burlywood;}
-        to {color: blue;}
         }
         #button4{
             position: absolute;
             left: 70vw;
             top: 40vw;
-            color: blue;
-            color: aqua;
-            font-size: xx-small;
-                          animation-name: changeColor;
-        animation-duration: 18s;
-        animation-delay: 9s;
-        animation-iteration-count: infinite;
-        animation-direction: reverse;
-        animation-fill-mode: forwards;
         }
-        @keyframes changeColor{
-        from {color: rgb(0, 119, 109);}
-        to {color: rgb(255, 63, 95);}
-        }
-        #button5{
+        #textArea5{
             position: absolute;
-            left: 80vw;
-            top: 50vw;
-            color: rgb(255, 51, 0);
-            font-size: xx-small;
-            padding: 10px 20px;
-                          animation-name: changeColor;
-        animation-duration: 6s;
-        animation-delay: 3s;
-        animation-iteration-count: infinite;
-        animation-direction: reverse;
-        animation-fill-mode: forwards;
+            left: 70vw;
+            top: 45vw;
+            width: 20vw;
         }
-        @keyframes changeColor{
-        from {color: rgb(154, 5, 173);}
-        to {color: blue;}
-        }
-        #button6{
-            position: absolute;
-            left: 90vw;
-            top: 70vw;
-            color: rgb(56, 255, 228);
-            font-size: larger;
-                          animation-name: changeColor;
-        animation-duration: 8s;
-        animation-delay: 4s;
-        animation-iteration-count: infinite;
-        animation-direction: reverse;
-        animation-fill-mode: forwards;
-        }
-        @keyframes changeColor{
-        from {color: rgb(231, 49, 255);}
-        to {color: rgb(255, 52, 86);}
-        }
-        #button7{
-            position: absolute;
-            left: 90vw;
-            top: 70vw;
-            color: rgb(56, 255, 228);
-            font-size: larger;
-                          animation-name: changeColor;
-        animation-duration: 10s;
-        animation-delay: 5s;
-        animation-iteration-count: infinite;
-        animation-direction: reverse;
-        animation-fill-mode: forwards;
-        }
-        @keyframes changeColor{
-        from {color: rgb(0, 59, 114);}
-        to {color: rgb(53, 0, 139);}
-        }
+
         @media only screen and (max-width: 600px) {
             .container{
                 width: 100%;
@@ -126,7 +40,8 @@
 
             #button2,
             #button3,
-            #button4 {
+            #button4,
+            #textArea5 {
                 position: static;
                 margin-top: 10px;
             }
