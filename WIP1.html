@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Index</title>
-<link rel="stylesheet"  href="./stylesheet/stylesheetWIP0.css"> <!-- Link to external CSS file if you have one-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=yes, width=640">
+    <title> DOom Of Anime Waifu </title>
+     <link rel="stylesheet" href="./stylesheet/stylesheetWIP1.css"> <!-- Link to external CSS file if you have one-->
 </head>
 <body>
-<h1>This is the index page</h1>
-<style></style>
-<script></script> 
+
+<div id="desktop">
+    <!-- Desktop Icons -->
+    <div class="icon" onclick="toggleWindow('win-readme')">
+        <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
+        <span>WAIFU.TXT</span>
+    </div>
+
+    <!-- The Window -->
+    <div id="win-readme" class="window">
+        <div class="title-bar">
+            <span>Notepad - WAIFU.TXT</span>
+            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
+        </div>
+        <div class="window-content">
+            <p> Welcome to the Doom of Anime </p>
+            <p> Anime Waifus </p>
+            <button onclick="alert('Its Too Late Waifus Have Taken Over!')" > Waifus Only </button>
+        </div>
+    </div>
+</div>
+
+<div id="start-menu">
+    <div class="menu-item" onclick="alert('Waifu Error Occured')"> Waifus Are Destroying Us</div>
+    <div class="menu-item" onclick="toggleWindow('Waifus-Must-Be-Stopped')"> Waifu Virus Incoming </div>
+</div>
+
+<div id="taskbar">
+    <div id="start-button" onclick="toggleStartMenu()"> The Amazing Waifus Ever </div>
+</div>
+
+
+
+<script>
+    // Interaction 1: Opening/Closing Windows
+    function toggleWindow(id) {
+        const win = document.getElementById(id);
+        if (win.style.display === "block") {
+            win.style.display = "none";
+        } else {
+            win.style.display = "block";
+            // Randomly position or center it
+            win.style.top = "150px";
+            win.style.left = "150px";
+        }
+    }
+
+    // Interaction 2: Start Menu Toggle
+    function toggleStartMenu() {
+        const menu = document.getElementById('start-menu');
+        menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+
+    // Close menus if clicking desktop
+    document.getElementById('desktop').addEventListener('click', function(e) {
+        if (e.target.id === 'desktop') {
+            document.getElementById('start-menu').style.display = 'none';
+        }
+    });
+
+    // Interaction 3: Draggable Windows (Simple)
+    const windows = document.querySelectorAll('.window');
+    windows.forEach(win => {
+        const titleBar = win.querySelector('.title-bar');
+        let isDragging = false;
+        
+        titleBar.onmousedown = (e) => {
+            isDragging = true;
+            let offset = [win.offsetLeft - e.clientX, win.offsetTop - e.clientY];
+            
+            document.onmousemove = (ev) => {
+                if (isDragging) {
+                    win.style.left = (ev.clientX + offset[0]) + 'px';
+                    win.style.top = (ev.clientY + offset[1]) + 'px';
+                }
+            };
+        };
+        
+        document.onmouseup = () => { isDragging = false; };
+    });
+</script>
+
 </body>
 </html>
