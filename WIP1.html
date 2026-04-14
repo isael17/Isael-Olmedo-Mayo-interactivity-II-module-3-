@@ -9,10 +9,16 @@
 <body>
 
 <div id="desktop">
+
     <!-- Desktop Icons -->
     <div class="icon" onclick="toggleWindow('win-readme')">
         <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
         <span>WAIFU.TXT</span>
+    </div>
+
+    <div class="icon" onclick="toggleWindow('win-readme2')">
+        <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
+        <span>Image.TXT</span>
     </div>
 
     <!-- The Window -->
@@ -29,18 +35,71 @@
     </div>
 </div>
 
+    <div id="win-readme2" class="window">
+        <div class="title-bar">
+            <span>Notepad - Image.TXT</span>
+            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
+        </div>
+        <div class="window-content">
+            <p> Welcome to the Doom of Anime Images </p>
+            <p> Anime Waifus Are The Worst </p>
+        <button id="toggleBtn" style="color: #f0f;"> Dangerous Waifu Picture </button>
+        <img id="pic" src="./images/3158062.jpg" class="hidden">
+
+        
+
+        </div>
+    </div>
+</div>
+
+ <div id="ghost"><div class="tail"></div></div>
+
 <div id="start-menu">
     <div class="menu-item" onclick="alert('Waifu Error Occured')"> Waifus Are Destroying Us</div>
     <div class="menu-item" onclick="toggleWindow('Waifus-Must-Be-Stopped')"> Waifu Virus Incoming </div>
 </div>
 
+
 <div id="taskbar">
     <div id="start-button" onclick="toggleStartMenu()"> The Amazing Waifus Ever </div>
 </div>
 
-
+<div class="icon interactive-icon" onclick="alert('Button clicked!')">
+    <div style="background: #9c27b0; width:32px; height:32px; margin:auto; display: flex; align-items: center; justify-content: center; border: 2px inset rgba(255,255,255,0.5);">
+        <span style="color: white; font-weight: bold; font-size: 18px;">⚙️</span>
+    </div>
+    <span style="display: block; margin-top: 4px;">SETTINGS</span>
+</div>
 
 <script>
+
+    const ghost = document.getElementById('ghost');
+    let x = window.innerWidth / 2, y = window.innerHeight / 2;
+    const speed = 20;
+    
+    function updatePos() {
+        x = Math.max(0, Math.min(window.innerWidth - 60, x));
+        y = Math.max(0, Math.min(window.innerHeight - 70, y));
+        ghost.style.left = x + 'px';
+        ghost.style.top = y + 'px';
+    }
+    
+    document.addEventListener('keydown', (e) => {
+        if(e.key === 'ArrowUp') y -= speed;
+        if(e.key === 'ArrowDown') y += speed;
+        if(e.key === 'ArrowLeft') x -= speed;
+        if(e.key === 'ArrowRight') x += speed;
+        updatePos();
+    });
+    updatePos(); // Initial center
+
+const btn = document.getElementById('toggleBtn');
+const image = document.getElementById('pic');
+
+btn.addEventListener('click', () => {
+  // .toggle() adds the class if it's missing, and removes it if it's present
+  image.classList.toggle('hidden');
+});
     // Interaction 1: Opening/Closing Windows
     function toggleWindow(id) {
         const win = document.getElementById(id);
@@ -86,8 +145,10 @@
         };
         
         document.onmouseup = () => { isDragging = false; };
+
     });
 </script>
 
 </body>
 </html>
+

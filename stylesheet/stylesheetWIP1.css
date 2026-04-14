@@ -135,3 +135,36 @@
             background: #800031;
             color: rgb(214, 19, 253);
         }
+.hidden {
+  display: none;
+}
+#pic {
+  max-width: 100%; /* Prevents image from overflowing its container */
+  height: auto;     /* Maintains aspect ratio */
+  object-fit: contain; /* Autofits image within its set dimensions */
+}
+    #ghost {
+        position: absolute; width: 60px; height: 70px; background: rgb(217, 9, 236);
+        border-top-left-radius: 50px; border-top-right-radius: 50px;
+        animation: float 2s ease-in-out infinite;
+        transition: left 0.1s linear, top 0.1s linear;
+    }
+    #ghost::after, #ghost::before {
+        content: ''; position: absolute; background: #ff0683;
+        width: 10px; height: 10px; border-radius: 50%; top: 20px;
+    }
+    #ghost::after { left: 15px; }
+    #ghost::before { right: 15px; }
+    .tail {
+        position: absolute; bottom: -20px;
+        border-left: 10px solid transparent; border-right: 10px solid transparent;
+        border-top: 20px solid rgb(248, 59, 255); left: 20px;
+    }
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+     }
+        body {
+  /* Replace 'my-cursor.png' with your image path */
+  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=135538'), auto;
+}
