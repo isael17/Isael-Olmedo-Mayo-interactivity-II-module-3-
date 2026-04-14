@@ -1,4 +1,13 @@
-  const ghost = document.getElementById('ghost');
+    function toggleMusic() {
+  var music = document.getElementById("myMusic");
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
+    const ghost = document.getElementById('ghost');
     let x = window.innerWidth / 2, y = window.innerHeight / 2;
     const speed = 20;
     

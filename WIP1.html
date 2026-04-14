@@ -21,14 +21,20 @@
         <span>Image.TXT</span>
     </div>
 
+        <div class="icon" onclick="toggleWindow('win-readme3')">
+        <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
+        <span>Songs.TXT</span>
+    </div>
+
+
     <!-- The Window -->
     <div id="win-readme" class="window">
         <div class="title-bar">
             <span>Notepad - WAIFU.TXT</span>
-            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
+            <div class="btn-close" onclick="toggleWindow('win-readme2')">X</div>
         </div>
         <div class="window-content">
-            <p> Welcome to the Doom of Anime </p>
+            <p> Welcome to the Doom of Waifus </p>
             <p> Anime Waifus </p>
             <button onclick="alert('Its Too Late Waifus Have Taken Over!')" > Waifus Only </button>
         </div>
@@ -38,16 +44,27 @@
     <div id="win-readme2" class="window">
         <div class="title-bar">
             <span>Notepad - Image.TXT</span>
-            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
+            <div class="btn-close" onclick="toggleWindow('win-readme3')">X</div>
         </div>
         <div class="window-content">
             <p> Welcome to the Doom of Anime Images </p>
-            <p> Anime Waifus Are The Worst </p>
-        <button id="toggleBtn" style="color: #f0f;"> Dangerous Waifu Picture </button>
-        <img id="pic" src="./images/3158062.jpg" class="hidden">
+            <p> Anime Waifu Images </p>
+        <button id="toggleBtn" style="color: #f0f; background-color: rgb(75, 0, 31);"> Dangerous Waifu Picture </button>
+        <img id="pic" src="./images/images.jpg" class="hidden">
+        </div>
+    </div>
+</div>
 
-        
-
+    <div id="win-readme3" class="window">
+        <div class="title-bar">
+            <span>Notepad - Songs.TXT</span>
+            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
+        </div>
+        <div class="window-content">
+            <p> Welcome Amazing Songs Of Anime </p>
+            <p> Anime Songs </p>
+            <audio id="myMusic" src="./songs/Ivan Cornejo - Me Prometí (Lyric Video).mp3"></audio>
+        <button onclick="toggleMusic()" style="background-color: blue; font-style: oblique; font-size: medium; margin: auto; border: #f0f;"> Music Button</button>
         </div>
     </div>
 </div>
@@ -56,19 +73,12 @@
 
 <div id="start-menu">
     <div class="menu-item" onclick="alert('Waifu Error Occured')"> Waifus Are Destroying Us</div>
-    <div class="menu-item" onclick="toggleWindow('Waifus-Must-Be-Stopped')"> Waifu Virus Incoming </div>
+    <div class="menu-item" onclick="alert('Waifus-Must-Be-Stopped')"> Waifu Virus Incoming </div>
 </div>
 
 
 <div id="taskbar">
     <div id="start-button" onclick="toggleStartMenu()"> The Amazing Waifus Ever </div>
-</div>
-
-<div class="icon interactive-icon" onclick="alert('Button clicked!')">
-    <div style="background: #9c27b0; width:32px; height:32px; margin:auto; display: flex; align-items: center; justify-content: center; border: 2px inset rgba(255,255,255,0.5);">
-        <span style="color: white; font-weight: bold; font-size: 18px;">⚙️</span>
-    </div>
-    <span style="display: block; margin-top: 4px;">SETTINGS</span>
 </div>
 
 <script src="./javascript/scriptWIP1.js"></script>
