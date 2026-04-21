@@ -121,6 +121,7 @@ btn.addEventListener('click', () => {
   // .toggle() adds the class if it's missing, and removes it if it's present
   image.classList.toggle('hidden');
 });
+
     // Interaction 1: Opening/Closing Windows
     function toggleWindow(id) {
         const win = document.getElementById(id);
@@ -155,16 +156,20 @@ btn.addEventListener('click', () => {
         
         titleBar.onmousedown = (e) => {
             isDragging = true;
+            console.log("isdragging:",isDragging);
             let offset = [win.offsetLeft - e.clientX, win.offsetTop - e.clientY];
             
             document.onmousemove = (ev) => {
-                if (isDragging) {
+                if (isDragging==true) {
                     win.style.left = (ev.clientX + offset[0]) + 'px';
                     win.style.top = (ev.clientY + offset[1]) + 'px';
+                }else{
+                    win.style.left=0;
+                    win.style.top=0;
+                    console.log("changeBack");
                 }
             };
         };
-        
-        document.onmouseup = () => { isDragging = false; };
+
 
     });
