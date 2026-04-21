@@ -7,23 +7,28 @@
      <link rel="stylesheet" href="./stylesheet/stylesheetWIP1.css"> <!-- Link to external CSS file if you have one-->
 </head>
 <body>
-
+    
 <div id="desktop">
 
     <!-- Desktop Icons -->
     <div class="icon" onclick="toggleWindow('win-readme')">
         <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
-        <span>WAIFU.TXT</span>
+        <span id="interactive-text">WAIFU.TXT</span>
     </div>
 
     <div class="icon" onclick="toggleWindow('win-readme2')">
         <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
-        <span>Image.TXT</span>
+        <span id="interactive-text">Image.TXT</span>
     </div>
 
         <div class="icon" onclick="toggleWindow('win-readme3')">
         <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
-        <span>Songs.TXT</span>
+        <span id="interactive-text">Games.TXT</span>
+    </div>
+
+        <div class="icon" onclick="toggleWindow('win-readme4')">
+        <div style="background: #f0f; width:32px; height:32px; margin:auto;"></div>
+        <span id="interactive-text">Songs.TXT</span>
     </div>
 
 
@@ -31,7 +36,7 @@
     <div id="win-readme" class="window">
         <div class="title-bar">
             <span>Notepad - WAIFU.TXT</span>
-            <div class="btn-close" onclick="toggleWindow('win-readme2')">X</div>
+            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
         </div>
         <div class="window-content">
             <p> Welcome to the Doom of Waifus </p>
@@ -44,7 +49,7 @@
     <div id="win-readme2" class="window">
         <div class="title-bar">
             <span>Notepad - Image.TXT</span>
-            <div class="btn-close" onclick="toggleWindow('win-readme3')">X</div>
+            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
         </div>
         <div class="window-content">
             <p> Welcome to the Doom of Anime Images </p>
@@ -57,13 +62,29 @@
 
     <div id="win-readme3" class="window">
         <div class="title-bar">
+            <span>Notepad - Games.TXT</span>
+            <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
+        </div>
+        <div class="window-content">
+            <p> Amazing Anime Games </p>
+            <p> Anime Games </p>
+    <div class="container">
+        <h1> Power Up Those Clicks </h1>
+        <p>Clicker Power: <span id="score">0</span></p>
+        <button id="power-button"> Defeat The Waifus !</button>
+    </div>
+    </div>
+</div>
+
+    <div id="win-readme4" class="window">
+        <div class="title-bar">
             <span>Notepad - Songs.TXT</span>
             <div class="btn-close" onclick="toggleWindow('win-readme')">X</div>
         </div>
         <div class="window-content">
             <p> Welcome Amazing Songs Of Anime </p>
             <p> Anime Songs </p>
-            <audio id="myMusic" src="./songs/Ivan Cornejo - Me Prometí (Lyric Video).mp3"></audio>
+            <audio id="myMusic" src="./songs/“Takedown” Official Lyric Video feat. Jeongyeon, Jihyo and Chaeyoung from TWICE _ KPop Demon Hunters.mp3"></audio>
         <button onclick="toggleMusic()" style="background-color: blue; font-style: oblique; font-size: medium; margin: auto; border: #f0f;"> Music Button</button>
         </div>
     </div>

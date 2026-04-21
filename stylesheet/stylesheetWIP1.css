@@ -143,28 +143,65 @@
   height: auto;     
   object-fit: contain; 
 }
+    body { background: #1a1a1a; overflow: hidden; height: 100vh; margin: 0; }
+    body { height: 100vh; background-color: #1a1a1a; overflow: hidden; margin: 0; }
     #ghost {
-        position: absolute; width: 70px; height: 70px; background: rgb(217, 9, 236);
-        border-top-left-radius: 50px; border-top-right-radius: 50px;
-        animation: float 4s ease-in-out infinite;
-        transition: left 0.1s linear, top 0.1s linear;
+        position: absolute; width: 40px; height: 40px;
+        background: rgb(189, 105, 164); border-radius: 50% 50% 0 0;
+        pointer-events: none; transition: transform 0.1s ease-out;
+        transform: translate(-50%, -50%); z-index: 100;
+        box-shadow: 0 0 15px rgba(82, 1, 28, 0.5);
     }
-    #ghost::after, #ghost::before {
-        content: ''; position: absolute; background: #440625;
-        width: 10px; height: 10px; border-radius: 50%; top: 30px;
+    .particle {
+        position: absolute; width: 8px; height: 8px;
+        background: rgba(73, 1, 64, 0.5); border-radius: 50%;
+        pointer-events: none; animation: fadeOut 0.8s forwards;
     }
-    #ghost::after { left: 15px; }
-    #ghost::before { right: 15px; }
-    .tail {
-        position: absolute; bottom: -20px;
-        border-left: 10px solid transparent; border-right: 10px solid transparent;
-        border-top: 20px solid rgb(248, 59, 255); left: 20px;
+    @keyframes fadeOut {
+        to { opacity: 0; transform: translateY(-20px); }
     }
-    @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-20px); }
-     }
         body {
   /* Replace 'my-cursor.png' with your image path */
   cursor: url('http://www.rw-designer.com/cursor-extern.php?id=165269'), auto;
 }
+        body {
+            text-align: center;
+            background-color: #49021e;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #power-button {
+            padding: 20px 40px;
+            font-size: 24px;
+            background-color: #ff557f;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px #bd415f;
+            transition: all 0.1s;
+        }
+        #power-button:active {
+            box-shadow: 0 2px #bd415f;
+            transform: translateY(8px);
+        }
+        .container { margin-top: 50px; }
+    body {
+      height: 100vh; /* Ensure the body covers the full screen height */
+      margin: 0;
+      transition: background-color 0.1s ease; /* Smooth the color transition */
+    }
+  body { height: 100vh; overflow: hidden; background-color: #f0f0f0; }
+  .mouse-text {
+    position: absolute;
+    font-weight: bold;
+    pointer-events: none; /* Prevents text from interfering with mouse movement */
+    transition: all 0.1s ease-out; /* Smooth transition */
+  }
+        /* Base styling for the span text */
+        #interactive-text {
+            font-family: sans-serif;
+            transition: color 0.1s ease, font-size 0.1s ease;
+            cursor: pointer;
+            display: inline-block;
+        }
