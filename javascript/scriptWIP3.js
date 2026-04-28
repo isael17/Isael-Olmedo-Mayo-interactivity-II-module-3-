@@ -9,7 +9,7 @@
             pet.style.top = randomY + 'px';
             pet.style.bottom = 'auto';
             pet.style.right = 'auto';
-        }, 5000); // Moves every 5 seconds
+        }, 6000); // Moves every 6 seconds
 
 function spawnFlyingStuff(event) {
     const emojis = ['☁️', '👺', '⚔️', '🌸', '🎋', '👿'];
