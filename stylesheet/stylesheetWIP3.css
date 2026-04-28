@@ -262,7 +262,7 @@
     top: 0;
     height: 100vh;
     width: 80px;
-    background: #333;
+    background: #ff00aa;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -274,8 +274,8 @@
 .launch-btn {
     padding: 10px;
     cursor: pointer;
-    background: #555;
-    color: white;
+    background: #3a012e;
+    color: rgb(2, 196, 255);
     border: none;
     border-radius: 5px;
 }
@@ -302,7 +302,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    padding: 20px;
+    padding: 1px;
   }
 
   /* Interaction: Scaling effect on hover */
@@ -319,3 +319,56 @@
     transform: scale(1.05); /* Interactive zoom */
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
   }
+ body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #222;
+    overflow: hidden; /* Prevents scrollbars */
+  }
+
+  /* Base style for moving objects */
+  .object {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation-name: moveLeft;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  /* Different Colors & Sizes */
+  .o1 { width: 50px; height: 50px; background: #f0bdd0; top: 20%; animation-duration: 10s; }
+  .o2 { width: 90px; height: 90px; background: #ff478d; top: 50%; animation-duration: 2s; animation-delay: 1s; }
+  .o3 { width: 70px; height: 70px; background: #8400ff; top: 70%; animation-duration: 4s; animation-delay: 0.5s; }
+  .o4 { width: 100px; height: 100px; background: #f00db7; top: 10%; animation-duration: 1s; animation-delay: 2s; }
+
+  /* Keyframes to move from right (100vw) to left (-100px) */
+  @keyframes moveLeft {
+    0% {
+      left: 100vw;
+    }
+    100% {
+      left: -100px; /* Moves completely off screen */
+    }
+  }
+        /* The Pet Container */
+        #pet {
+            position: fixed; /* This makes it stay on screen */
+            bottom: 20px;    /* Positioned at bottom */
+            right: 20px;     /* Positioned at right */
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            z-index: 9999;   /* Ensures it stays on top of other elements */
+            transition: all 0.5s ease; /* Smooth movement */
+        }
+
+        /* The Pet Image */
+        #pet img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        

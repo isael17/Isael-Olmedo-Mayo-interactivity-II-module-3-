@@ -1,3 +1,16 @@
+      const pet = document.getElementById('pet');
+
+        // Optional: Make the pet move randomly
+        setInterval(() => {
+            const randomX = Math.random() * (window.innerWidth - 100);
+            const randomY = Math.random() * (window.innerHeight - 100);
+            
+            pet.style.left = randomX + 'px';
+            pet.style.top = randomY + 'px';
+            pet.style.bottom = 'auto';
+            pet.style.right = 'auto';
+        }, 5000); // Moves every 5 seconds
+
 function spawnFlyingStuff(event) {
     const emojis = ['☁️', '👺', '⚔️', '🌸', '🎋', '👿'];
     const numItems = 10;
